@@ -62,9 +62,9 @@ You can create a custom user interface using your preferred frontend framework. 
 
 ![Food Ordering System UI](UIImage/food_ordering_ui.png)
 
-Watch the demo video: [Food Ordering System Demo](https://www.youtube.com/watch?v=6xsuRXlzxUI)
+Watch the demo video: <a href="https://www.youtube.com/watch?v=6xsuRXlzxUI" target="_blank">Food Ordering System Demo</a>
 
-The React.js implementation provides a more sophisticated user interface while still communicating with the same `/chat` endpoint on port 8000. Key features of this UI include:
+The React.js implementationprovides a more sophisticated user interface while still communicating with the same `/chat` endpoint on port 8000. Key features of this UI include:
 
 - Modern, responsive design
 - Interactive menu selection
