@@ -64,6 +64,8 @@ You can create a custom user interface using your preferred frontend framework. 
 
 Watch the demo video: <a href="https://www.youtube.com/watch?v=6xsuRXlzxUI" target="_blank">Food Ordering System Demo</a>
 
+The food ordering agent UI source code can be found here: <a href="https://github.com/purunep/UI-FoodOrderingAgent" target="_blank">GitHub Repository</a>
+
 The React.js implementationprovides a more sophisticated user interface while still communicating with the same `/chat` endpoint on port 8000. Key features of this UI include:
 
 - Modern, responsive design
